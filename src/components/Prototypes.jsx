@@ -3,7 +3,7 @@ import usePrototypes from "../hooks/usePrototypes";
 
 export default function Prototypes() {
   const prototypes = usePrototypes();
-  const { addToOrder, remove, removeAll } = useActions();
+  const { addToOrder } = useActions();
   console.log("prototype ");
 
   return (
