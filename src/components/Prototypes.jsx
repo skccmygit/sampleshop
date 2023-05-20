@@ -4,6 +4,8 @@ import usePrototypes from "../hooks/usePrototypes";
 export default function Prototypes() {
   const prototypes = usePrototypes();
   const { addToOrder, remove, removeAll } = useActions();
+  console.log("prototype ");
+
   return (
     <main>
       <div className="prototypes">

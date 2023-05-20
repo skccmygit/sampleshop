@@ -2,11 +2,15 @@ import useActions from "../hooks/useActions";
 import useOrders from "../hooks/useOrders";
 import usePrototypes from "../hooks/usePrototypes";
 import { useMemo } from "react";
+import { useNavigate, Link } from "react-router-dom";
+
 export default function Orders() {
   const orders = useOrders();
   const prototypes = usePrototypes();
   const { remove, removeAll } = useActions();
-  console.log(orders);
+  const navigator = useNavigate();
+
+  //console.log(navigator);
 
   const totalPrice = useMemo(() => {
     return orders
@@ -17,6 +21,7 @@ export default function Orders() {
       })
       .reduce((l, r) => l + r, 0);
   }, [orders, prototypes]);
+
   if (orders.length === 0) {
     return (
       <aside>
@@ -82,8 +87,10 @@ export default function Orders() {
             </div>
             <button
               className="btn btn--secondary"
-              style={{ width: "100%", marginTop: 10 }}>
-              Checkout
+              style={{ width: "100%", marginTop: 10 }}
+              // onClick={() => navigator("/checkout")}>
+            >
+              <Link to="/checkout">Checkout</Link>
             </button>
           </div>
         </div>
