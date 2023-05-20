@@ -22,14 +22,18 @@ function App() {
       <Header />
       <div className="container">
         <Routes>
-          <Route path="/" element={<Prototypes />} />
+          {/* "/" 경로에 Prototypes와 Orders 두개 컴포넌트를 모두 보여주기 위해서 배열로..(key추가) */}
+          <Route
+            path="/"
+            element={[<Prototypes key={"1"} />, <Orders key={"2"} />]}
+          />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {/* "/" 경로에 Prototypes와 Orders 두개 컴포넌트를 모두 보여주기 위해서 Routes를 추가 함. */}
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<Orders />} />
-        </Routes>
+        </Routes> */}
       </div>
       <Footer />
     </AppStatProvider>
