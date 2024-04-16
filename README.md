@@ -1,4 +1,4 @@
-# 리액트 활용 Simple Shop 테스트
+# 리액트 활용 Simple Shop UI
 
 ⚫ 팀/개인 구분 개인
 
